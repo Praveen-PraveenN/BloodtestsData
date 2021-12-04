@@ -18,10 +18,23 @@ export class AppComponent {
     moveItemInArray(this.columns, event.previousIndex, event.currentIndex);
   }
 
+  counter=0
   btnClicked(a:any)
   {
-    this.buttonClicked=true
-    this.buttonClick=this.arr[a]
+    this.counter=this.counter+1;
+    if(this.counter%2===0)
+    {
+      this.buttonClicked=!this.buttonClicked
+        
+      
+    }
+    setTimeout(() => {
+      this.buttonClicked=true
+      this.buttonClick=this.arr[a]
+      
+    }, 150);
+   
+    
   }
 
 }

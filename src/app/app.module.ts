@@ -9,6 +9,7 @@ import{MatIconModule} from '@angular/material/icon';
 
 
 import {MatTableModule} from '@angular/material/table';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,7 @@ import {MatTableModule} from '@angular/material/table';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule,MatTableModule,MatIconModule
+    BrowserAnimationsModule,MatTableModule,MatIconModule,MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

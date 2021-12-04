@@ -4,15 +4,22 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
   <title>N.Praveen</title>
 </head>
 <body>
 
-  <main> <h4 style="text-align: center;">Hi 👋 I am Praveen. </h4> 
+  <main> 
+    <div style="text-align: center;">
+       
+      <p>Hi 👋 I am N.Praveen. <br> </p>
+      <article style="font-size: 0.5em;margin-top: -10px;"> ( This is my personal BloodTestsData website ) </article>
+
+    </div>
   
-  <p style="color: red;font-size: 0.7em;text-align: center;">** TLC/Platelets-(cells/cu.mm)</p>
 
   <!--Table showing Data-->
+  <p style="color: black;text-decoration: underline;margin-left: 2%;font-size: 0.7em;text-underline-position: under;">Year : 2021</p>
   <table mat-table
        [dataSource]="dataSource" 
        cdkDropList
@@ -41,7 +48,7 @@
 
   <ng-container matColumnDef="btn">
     <th mat-header-cell cdkDrag *matHeaderCellDef> More </th>
-    <td mat-cell *matCellDef="let element">  <button style="background-color: transparent;border: 0px;vertical-align: middle;" (click)="btnClicked(element.btn)"> <mat-icon style="color: blue;">add_box</mat-icon></button>
+    <td mat-cell *matCellDef="let element">  <button style="background-color: transparent;border: 0px;vertical-align: middle;" (click)="btnClicked(element.btn)"> <mat-icon style="color: blue;" id="btn">add_box</mat-icon></button>
      </td>
   </ng-container>
 
@@ -50,9 +57,18 @@
   <tr mat-row *matRowDef="let row; columns: columns;"></tr>
   
 </table>
+<p style="color: red;font-size: 0.7em;text-align: center;">** TLC/Platelets-(cells/cu.mm)</p>
+
+<br>
+
 
  <div *ngIf="buttonClicked">
+  <h5 style="color: brown;text-align: center;width: 99%;">Blood Test Report:</h5>
+ 
+  
   <img src={{buttonClick}} alt="Report Not available" style="width: 100%;">
+
+
 </div>
 
 
