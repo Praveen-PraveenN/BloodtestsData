@@ -19,7 +19,7 @@
   
 
   <!--Table showing Data-->
-  <p style="color: black;text-decoration: underline;margin-left: 2%;font-size: 0.7em;text-underline-position: under;">Year : 2021</p>
+  <p style="color: black;text-decoration: underline;margin-left: 4%;font-size: 0.7em;text-underline-position: under;">Year : 2021</p>
   <table mat-table
        [dataSource]="dataSource" 
        cdkDropList
@@ -32,7 +32,7 @@
   </ng-container>
 
   <ng-container matColumnDef="Hb">
-    <th mat-header-cell cdkDrag *matHeaderCellDef> Hb (g/dL) </th>
+    <th mat-header-cell cdkDrag *matHeaderCellDef> Hb </th>
     <td mat-cell *matCellDef="let element"> {{element.Hb}} </td>
   </ng-container>
 
@@ -47,8 +47,8 @@
   </ng-container>
 
   <ng-container matColumnDef="btn">
-    <th mat-header-cell cdkDrag *matHeaderCellDef> More </th>
-    <td mat-cell *matCellDef="let element">  <button style="background-color: transparent;border: 0px;vertical-align: middle;" (click)="btnClicked(element.btn)"> <mat-icon style="color: blue;" id="btn">add_box</mat-icon></button>
+    <th mat-header-cell cdkDrag *matHeaderCellDef>  </th>
+    <td mat-cell *matCellDef="let element">  <button style="background-color: transparent;border: 0px;vertical-align: middle;color: blue;text-decoration: underline;" (click)="btnClicked(element.btn)">See full report</button>
      </td>
   </ng-container>
 
@@ -57,7 +57,7 @@
   <tr mat-row *matRowDef="let row; columns: columns;"></tr>
   
 </table>
-<p style="color: red;font-size: 0.7em;text-align: center;">** TLC/Platelets-(cells/cu.mm)</p>
+<p style="color: red;font-size: 0.7em;text-align: center;">** TLC/Platelets-(cells/cu.mm) & Hb-(g/dL) </p>
 
 <br>
 
@@ -66,16 +66,15 @@
   <h5 style="color: brown;text-align: center;width: 99%;">Blood Test Report:</h5>
  
   
-  <img src={{buttonClick}} alt="Report Not available" style="width: 100%;">
+  <img src={{buttonClick}} alt="Report Not available" style="width: 100%;overflow:hidden">
 
 
 </div>
 
 
-
+<br>
   
-  
-  </main>
+</main>
  
 </body>
 </html>
