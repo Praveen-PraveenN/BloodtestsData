@@ -4,77 +4,35 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-  <title>N.Praveen</title>
+  <title>Document</title>
 </head>
-<body>
-
-  <main> 
-    <div style="text-align: center;">
-       
-      <p>Hi 👋 I am N.Praveen. <br> </p>
-      <article style="font-size: 0.5em;margin-top: -10px;"> ( This is my personal BloodTestsData website ) </article>
-
-    </div>
+<body style="overflow: hidden;">
   
-
-  <!--Table showing Data-->
-  <p style="color: black;text-decoration: underline;margin-left: 4%;font-size: 0.7em;text-underline-position: under;">Year : 2021</p>
-  <table mat-table
-       [dataSource]="dataSource" 
-       cdkDropList
-       cdkDropListOrientation="horizontal"
-       (cdkDropListDropped)="drop($event)">
-
-  <ng-container matColumnDef="Date" >
-    <th mat-header-cell cdkDrag *matHeaderCellDef > Date </th>
-    <td mat-cell *matCellDef="let element"> {{element.Date}} </td>
-  </ng-container>
-
-  <ng-container matColumnDef="Hb">
-    <th mat-header-cell cdkDrag *matHeaderCellDef> Hb </th>
-    <td mat-cell *matCellDef="let element"> {{element.Hb}} </td>
-  </ng-container>
-
-  <ng-container matColumnDef="TLC">
-    <th mat-header-cell cdkDrag *matHeaderCellDef> TLC  </th>
-    <td mat-cell *matCellDef="let element"> {{element.TLC}} </td>
-  </ng-container>
-
-  <ng-container matColumnDef="Platelets">
-    <th mat-header-cell cdkDrag *matHeaderCellDef> Platelets </th>
-    <td mat-cell *matCellDef="let element"> {{element.Platelets}} </td>
-  </ng-container>
-
-  <ng-container matColumnDef="btn">
-    <th mat-header-cell cdkDrag *matHeaderCellDef>  </th>
-    <td mat-cell *matCellDef="let element">  <button style="background-color: transparent;border: 0px;vertical-align: middle;color: blue;text-decoration: underline;" (click)="btnClicked(element.btn)">See full report</button>
-     </td>
-  </ng-container>
-
-  
-  <tr mat-header-row *matHeaderRowDef="columns"></tr>
-  <tr mat-row *matRowDef="let row; columns: columns;"></tr>
-  
-</table>
-<p style="color: red;font-size: 0.7em;text-align: center;">** TLC/Platelets-(cells/cu.mm) & Hb-(g/dL) </p>
-
+  <div style="text-align: center;font-size: large;color: red;margin-top: 20px;">
+    <b>  ❤️My Blood Tests Data </b>
+  </div>
 <br>
 
+  <div *ngFor = "let i of data" >
+    
 
- <div *ngIf="buttonClicked">
-  <h5 style="color: brown;text-align: center;width: 99%;">Blood Test Report:</h5>
+      <mat-accordion   >    
+        <mat-expansion-panel (opened)="opened()"
+                             (closed)="closed()">
+          <mat-expansion-panel-header>
+            <mat-panel-title style="color: green;">
+              {{i.Date}}
+            </mat-panel-title>
+            <mat-panel-description style="color: green;">
+             Open
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <img *ngIf="loading" src="assets/load.gif" alt="loading" class="load" />
+          <img [hidden]="loading" (load)="onLoad()" src={{i.image}} alt="Report Not available" style="width: 100%;overflow:hidden">
+        </mat-expansion-panel>
+      </mat-accordion>
  
-  
-  <img src={{buttonClick}} alt="Report Not available" style="width: 100%;overflow:hidden">
-
-
-</div>
-
-
-<br>
-  
-</main>
- 
+    
+  </div>
 </body>
 </html>

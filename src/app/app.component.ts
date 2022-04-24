@@ -6,54 +6,54 @@ import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-   columns: string[] = ['Date', 'Hb', 'TLC', 'Platelets','btn'];
-  dataSource = ELEMENT_DATA;
-  buttonClick!:string
-  buttonClicked=false
 
+
+export class AppComponent {
+
+  panelOpenState = false;
+
+constructor(){}
+
+ngOnInit()
+{
+  console.log(this.data);
+  if(this.panelOpenState == true)
+  {
+    var changeColor = <HTMLElement> document.getElementById('a')
+    changeColor.style.color="red"
+  }
+}
   arr=['assets/dec_2021.jpg','assets/sep_2021.jpg','assets/may_2021.jpg']
 
-  drop(event: any) {
-    moveItemInArray(this.columns, event.previousIndex, event.currentIndex);
+  loading: boolean = true
+  onLoad() {
+      this.loading = false;
   }
-
-  counter=0
-  btnClicked(a:any)
-  {
-    console.warn(a)
-    this.counter=this.counter+1;
-    console.warn(this.counter)
-    if(this.counter%2===0)
-    {
-      this.buttonClicked=!this.buttonClicked
-        
-      
-    }
-    setTimeout(() => {
-      this.buttonClicked=true
-
-      this.buttonClick=this.arr[a]
-      
-    }, 150);
-   
-    
-  }
-
+opened()
+{
+  // var changeColor = <HTMLElement> document.getElementById('a')
+  //   changeColor.style.color="red"
+}
+closed()
+{
+  // var changeColor = <HTMLElement> document.getElementById('a')
+  //   changeColor.style.color="black"
 }
 
-export interface PeriodicElement {
-  TLC: number;
-  Date: string;
-  Platelets: number;
-  Hb: number;
-  btn:any
-}
 
-const ELEMENT_DATA: PeriodicElement[] = [
-  {Date: '01-Dec', Hb: 15.3, TLC: 8500, Platelets: 312000,btn:'0'},
-  {Date: '15-Sep', Hb: 15.2, TLC: 7800, Platelets: 355000,btn:'1'},
-  {Date: '27-may', Hb: 14.6, TLC: 6200, Platelets: 274000,btn:'2'}
+ data= 
+ [
+  {Date: '23-Apr-2022', image:'assets/apr_2022.jpg' },
+  {Date: '21-Feb-2022', image:'assets/feb_2022.jpg' },
+  {Date: '01-Dec-2021', image:'assets/dec_2021.jpg' },
+  {Date: '15-Sep-2021', image:'assets/sep_2021.jpg'},
+  {Date: '27-may-2021', image:'assets/may_2021.jpg'},
+  {Date: '05-Apr-2021', image:'assets/apr_2022.jpg' }
 
   
-];
+ ]
+
+
+ 
+}
+

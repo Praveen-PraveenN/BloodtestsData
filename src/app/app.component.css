@@ -2,4 +2,9 @@ table {
     width: 100%;
   }
 th{color: black;}
+
+.load{
+  margin-left: 50%;
+  width: 5%;
+}
  
