@@ -48,7 +48,7 @@ closed()
   {Date: '01-Dec-2021', image:'assets/dec_2021.jpg' },
   {Date: '15-Sep-2021', image:'assets/sep_2021.jpg'},
   {Date: '27-may-2021', image:'assets/may_2021.jpg'},
-  {Date: '05-Apr-2021', image:'assets/apr_2022.jpg' }
+  {Date: '05-Apr-2021', image:'assets/apr_2021.jpg' }
 
   
  ]
