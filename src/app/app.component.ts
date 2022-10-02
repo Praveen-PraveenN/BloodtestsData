@@ -43,12 +43,13 @@ closed()
 
  data= 
  [
+  {Date: '01-Oct-2022', image:'assets/oct_2022.jpg' },
   {Date: '23-Apr-2022', image:'assets/apr_2022.jpg' },
   {Date: '21-Feb-2022', image:'assets/feb_2022.jpg' },
   {Date: '01-Dec-2021', image:'assets/dec_2021.jpg' },
   {Date: '15-Sep-2021', image:'assets/sep_2021.jpg'},
   {Date: '27-may-2021', image:'assets/may_2021.jpg'},
-  {Date: '05-Apr-2021', image:'assets/apr_2021.jpg' }
+  {Date: '05-Apr-2021', image:'assets/apr_2021.jpg' },
 
   
  ]
